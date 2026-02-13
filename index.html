@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Will you be my Valentine?</title>
   <link rel="icon" type="image/png" href="img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
   <meta name="description" content="Will you be my Valentine?">
 
 
@@ -57,7 +58,7 @@
       display: grid;
       place-items: center;
       background: radial-gradient(circle at top, var(--bg2), var(--bg1));
-      font-family: system-ui, sans-serif;
+      font-family: 'Playfair Display', serif;
       padding: 16px;
     }
 
@@ -231,19 +232,19 @@
     <div class="hint" id="hint"></div>
 
     <section class="result" id="result">
-      <h2>Pala Hutti Yanna😵‍💫</h2>
-      <video id="vid" muted playsinline>
-        <source src="Pala hutti yanna.mp4" type="video/mp4">
-        Your browser does not support video.
-      </video>
-
+      <h2>I Knew You Would Say Yes🎉</h2>
+      <img class="fireworks"
+        src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHFxZHV5cHpxMmVrZnVoc2Via3E0d3kxNnhveHN0ajR1cW85NnpicCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7iZQzo9r0LcFnP0nnm/giphy.gif"
+        alt="Celebration GIF" />
+      <h3>Love U Babe ❤️</h3>
     </section>
+
   </main>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const name = urlParams.get('name') || "Babe,";
-    document.getElementById('question').textContent = `${name} Will you be my Valentine?`;
+    const name = urlParams.get('name') || "Honey,";
+    document.getElementById('question').textContent = `${name}will you be my Valentine?`;
 
     const zone = document.getElementById("zone");
     const yesBtn = document.getElementById("yesBtn");
@@ -393,15 +394,10 @@
     yesBtn.addEventListener("click", () => {
       zone.style.display = "none";
       hint.style.display = "none";
+      document.getElementById('question').style.display = "none";
       result.style.display = "block";
       resizeConfettiCanvas();
       fullScreenConfetti();
-
-      const vid = document.getElementById("vid");
-      vid.muted = false;   // turn ON sound
-      vid.volume = 1;
-      vid.currentTime = 0;
-      vid.play();         // play video + sound
     });
 
   </script>
